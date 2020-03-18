@@ -11,6 +11,6 @@ import Foundation
 import Foundation
 
 enum GenericError: Error {
-  case decoding(description: String)
-  case network(description: String)
+    case decoding(description: String)
+    case network(description: String)
 }

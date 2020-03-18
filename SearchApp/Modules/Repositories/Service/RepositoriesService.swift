@@ -10,7 +10,7 @@ import Foundation
 import Combine
 
 protocol RepositoriesFetchable {
-  func fetchRepositories(forText text: String) -> AnyPublisher<SearchResponse, GenericError>
+    func fetchRepositories(forText text: String) -> AnyPublisher<SearchResponse, GenericError>
 }
 
 struct RepositoriesService {
@@ -32,17 +32,17 @@ extension RepositoriesService: RepositoriesFetchable {
 
 // MARK: - API
 private extension RepositoriesService {
-  
-  func makeRepositoriesSearch(withText text: String) -> URLComponents {
-    var components = URLComponents()
-    components.scheme = GitHubAPI.scheme
-    components.host = GitHubAPI.host
-    components.path = GitHubAPI.searchPath + "/repositories"
     
-    components.queryItems = [
-      URLQueryItem(name: "q", value: text)
-    ]
-    
-    return components
-  }
+    func makeRepositoriesSearch(withText text: String) -> URLComponents {
+        var components = URLComponents()
+        components.scheme = GitHubAPI.scheme
+        components.host = GitHubAPI.host
+        components.path = GitHubAPI.searchPath + "/repositories"
+        
+        components.queryItems = [
+            URLQueryItem(name: "q", value: text)
+        ]
+        
+        return components
+    }
 }

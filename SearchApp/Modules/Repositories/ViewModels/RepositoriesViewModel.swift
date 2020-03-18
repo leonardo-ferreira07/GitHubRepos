@@ -12,20 +12,20 @@ import Combine
 class RepositoriesViewModel: ObservableObject {
     @Published var searchText: String = ""
     @Published var dataSource: [RepositoryRowViewModel] = []
-
+    
     private let repositoriesFetcher: RepositoriesService
     private var disposables = Set<AnyCancellable>()
-
+    
     init(repositoriesFetcher: RepositoriesService, scheduler: DispatchQueue = DispatchQueue(label: "RepositoriesViewModel")
     ) {
-      self.repositoriesFetcher = repositoriesFetcher
-      $searchText
-        .dropFirst(1)
-        .debounce(for: .seconds(0.5), scheduler: scheduler)
-        .sink(receiveValue: fetchRepositories(forsearchText:))
-        .store(in: &disposables)
+        self.repositoriesFetcher = repositoriesFetcher
+        $searchText
+            .dropFirst(1)
+            .debounce(for: .seconds(0.5), scheduler: scheduler)
+            .sink(receiveValue: fetchRepositories(forsearchText:))
+            .store(in: &disposables)
     }
-
+    
     func fetchRepositories(forsearchText searchText: String) {
         repositoriesFetcher.fetchRepositories(forText: searchText)
         .map { response in
@@ -33,22 +33,21 @@ class RepositoriesViewModel: ObservableObject {
         }
         .map(Array.removeDuplicates)
         .receive(on: DispatchQueue.main)
-        .sink(
-          receiveCompletion: { [weak self] value in
+        .sink(receiveCompletion: { [weak self] value in
             guard let self = self else { return }
             switch value {
             case .failure( let error):
-              print("## \(error)")
-              self.dataSource = []
+                print("## \(error)")
+                self.dataSource = []
             case .finished:
-              break
+                break
             }
-          },
-          receiveValue: { [weak self] forecast in
+        },
+        receiveValue: { [weak self] forecast in
             guard let self = self else { return }
             self.dataSource = forecast
         })
         .store(in: &disposables)
     }
-
+    
 }

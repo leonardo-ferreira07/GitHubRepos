@@ -12,7 +12,7 @@ struct RepositoryRow: View {
     private let viewModel: RepositoryRowViewModel
     
     init(viewModel: RepositoryRowViewModel) {
-      self.viewModel = viewModel
+        self.viewModel = viewModel
     }
     
     var body: some View {

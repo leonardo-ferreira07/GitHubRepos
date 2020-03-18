@@ -10,14 +10,14 @@ import SwiftUI
 
 struct SearchView : View {
     @ObservedObject var viewModel: RepositoriesViewModel
-
+    
     init(viewModel: RepositoriesViewModel) {
-      self.viewModel = viewModel
+        self.viewModel = viewModel
     }
     
     var body: some View {
         HStack(alignment: .center) {
-          TextField("e.g. Swift", text: $viewModel.searchText)
+            TextField("e.g. Swift", text: $viewModel.searchText)
         }
     }
 }

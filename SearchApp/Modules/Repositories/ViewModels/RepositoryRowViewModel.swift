@@ -13,7 +13,7 @@ struct RepositoryRowViewModel: Identifiable {
     private let repository: Repository
     
     init(item: Repository) {
-      self.repository = item
+        self.repository = item
     }
     
     // MARK: - Computed properties
@@ -36,11 +36,11 @@ struct RepositoryRowViewModel: Identifiable {
 }
 
 extension RepositoryRowViewModel: Hashable {
-  static func == (lhs: RepositoryRowViewModel, rhs: RepositoryRowViewModel) -> Bool {
-    return lhs.id == rhs.id
-  }
-
-  func hash(into hasher: inout Hasher) {
-    hasher.combine(self.id)
-  }
+    static func == (lhs: RepositoryRowViewModel, rhs: RepositoryRowViewModel) -> Bool {
+        return lhs.id == rhs.id
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(self.id)
+    }
 }
