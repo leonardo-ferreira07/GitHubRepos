@@ -6,6 +6,7 @@
 //  Copyright © 2020 Leonardo. All rights reserved.
 //
 
+import SwiftUI
 import Combine
 
 struct RepositoryRowViewModel: Identifiable {
@@ -17,15 +18,20 @@ struct RepositoryRowViewModel: Identifiable {
     
     // MARK: - Computed properties
     var id: String {
-        return "\(repository.id)"
+        "\(repository.id)"
     }
     
     var name: String {
-        return repository.name
+        repository.name ?? "No name returned from GitHub API"
     }
     
     var description: String {
-        repository.description
+        repository.description ?? "No description returned from GitHub API"
+    }
+    
+    var descriptionColor: Color {
+        let uiColor = repository.description == nil ? UIColor.red : UIColor.darkText
+        return Color(uiColor)
     }
 }
 

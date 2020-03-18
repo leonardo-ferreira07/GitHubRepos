@@ -23,7 +23,7 @@ struct RepositoriesView: View {
         if viewModel.dataSource.isEmpty {
           emptySection
         } else {
-          cityHourlyWeatherSection
+          searchingForSection
           forecastSection
         }
       }
@@ -41,7 +41,7 @@ private extension RepositoriesView {
     }
   }
 
-  var cityHourlyWeatherSection: some View {
+  var searchingForSection: some View {
     Section {
 //      NavigationLink(destination: viewModel.currentRepository) {
         VStack(alignment: .leading) {

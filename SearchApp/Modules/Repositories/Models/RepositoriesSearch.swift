@@ -10,8 +10,8 @@ import Foundation
 
 struct Repository: Decodable {
     var id: Int
-    let name: String
-    let description: String
+    let name: String?
+    let description: String?
 }
 
 struct SearchResponse: Decodable {

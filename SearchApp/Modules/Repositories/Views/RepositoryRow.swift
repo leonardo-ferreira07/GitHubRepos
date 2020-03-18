@@ -21,6 +21,7 @@ struct RepositoryRow: View {
                 .font(.headline)
             Text(viewModel.description)
                 .font(.subheadline)
+                .foregroundColor(viewModel.descriptionColor)
         }
     }
 }

@@ -22,11 +22,11 @@ class RepositoriesViewModel: ObservableObject {
       $searchText
         .dropFirst(1)
         .debounce(for: .seconds(0.5), scheduler: scheduler)
-        .sink(receiveValue: fetchWeather(forsearchText:))
+        .sink(receiveValue: fetchRepositories(forsearchText:))
         .store(in: &disposables)
     }
 
-    func fetchWeather(forsearchText searchText: String) {
+    func fetchRepositories(forsearchText searchText: String) {
         repositoriesFetcher.fetchRepositories(forText: searchText)
         .map { response in
             response.items.map(RepositoryRowViewModel.init)
@@ -37,7 +37,8 @@ class RepositoriesViewModel: ObservableObject {
           receiveCompletion: { [weak self] value in
             guard let self = self else { return }
             switch value {
-            case .failure:
+            case .failure( let error):
+              print("## \(error)")
               self.dataSource = []
             case .finished:
               break
