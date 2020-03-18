@@ -9,35 +9,23 @@
 import SwiftUI
 
 struct SearchView : View {
-    @State private var query: String = "swift"
-    @EnvironmentObject var repoStore: ReposStore
-    
-    var body: some View {
-        NavigationView {
-            List {
-                TextField("", text: $query, onEditingChanged: {_ in 
-                    self.fetch()
-                    
-                }) {
-                    self.fetch()
-                }
-                ForEach(repoStore.repos) { repo in
-                    RepositoryRow(repo: repo)
-                }
-                }.navigationBarTitle(Text("Search"))
-            }.onAppear(perform: fetch)
+    @ObservedObject var viewModel: RepositoriesViewModel
+
+    init(viewModel: RepositoriesViewModel) {
+      self.viewModel = viewModel
     }
     
-    private func fetch() {
-        repoStore.fetch(matching: query)
-        print(repoStore.repos)
+    var body: some View {
+        HStack(alignment: .center) {
+          TextField("e.g. Swift", text: $viewModel.searchText)
+        }
     }
 }
 
 #if DEBUG
 struct SearchView_Previews : PreviewProvider {
     static var previews: some View {
-        SearchView()
+        SearchView(viewModel: RepositoriesViewModel(repositoriesFetcher: RepositoriesService()))
     }
 }
 #endif

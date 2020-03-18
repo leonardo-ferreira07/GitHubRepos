@@ -9,13 +9,17 @@
 import SwiftUI
 
 struct RepositoryRow: View {
-    let repo: Repository
+    private let viewModel: RepositoryRowViewModel
+    
+    init(viewModel: RepositoryRowViewModel) {
+      self.viewModel = viewModel
+    }
     
     var body: some View {
         VStack(alignment: .leading) {
-            Text(repo.name)
+            Text(viewModel.name)
                 .font(.headline)
-            Text(repo.description)
+            Text(viewModel.description)
                 .font(.subheadline)
         }
     }
@@ -23,7 +27,7 @@ struct RepositoryRow: View {
 #if DEBUG
 struct RepoRow_Previews : PreviewProvider {
     static var previews: some View {
-        RepositoryRow(repo: Repository(id: 1, name: "test", description: "test description"))
+        RepositoryRow(viewModel: RepositoryRowViewModel(item: Repository(id: 1, name: "test", description: "test description")))
     }
 }
 #endif
