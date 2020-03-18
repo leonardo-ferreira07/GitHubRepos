@@ -30,7 +30,13 @@ struct RepositoryRowViewModel: Identifiable {
     }
     
     var descriptionColor: Color {
-        let uiColor = repository.description == nil ? UIColor.red : UIColor.darkText
+        var uiColor: UIColor
+        #if os(watchOS)
+            uiColor = repository.description == nil ? UIColor.red : UIColor.lightGray
+        #else
+            uiColor = repository.description == nil ? UIColor.red : UIColor.darkText
+        #endif
+        
         return Color(uiColor)
     }
 }

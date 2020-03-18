@@ -7,6 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A73269D62422D59500157526 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A73269D52422D59500157526 /* Assets.xcassets */; };
+		A73269DD2422D59500157526 /* SearchAppWatch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A73269DC2422D59500157526 /* SearchAppWatch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A73269E42422D59500157526 /* HostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73269E32422D59500157526 /* HostingController.swift */; };
+		A73269E62422D59500157526 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73269E52422D59500157526 /* ExtensionDelegate.swift */; };
+		A73269E82422D59500157526 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73269E72422D59500157526 /* NotificationController.swift */; };
+		A73269EA2422D59500157526 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73269E92422D59500157526 /* NotificationView.swift */; };
+		A73269EC2422D59500157526 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A73269EB2422D59500157526 /* Assets.xcassets */; };
+		A73269EF2422D59500157526 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A73269EE2422D59500157526 /* Preview Assets.xcassets */; };
+		A73269F42422D59500157526 /* SearchAppWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = A73269D02422D59300157526 /* SearchAppWatch.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A73269FD2422D76100157526 /* RepositoriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D9D0B52422814600850327 /* RepositoriesViewModel.swift */; };
+		A73269FE2422D76100157526 /* RepositoryRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D9D0B72422815400850327 /* RepositoryRowViewModel.swift */; };
+		A73269FF2422D76100157526 /* RepositoriesBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D9D0B22422810D00850327 /* RepositoriesBuilder.swift */; };
+		A7326A002422D76100157526 /* RepositoriesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D9D0AC24227C8B00850327 /* RepositoriesService.swift */; };
+		A7326A012422D76100157526 /* RepositoriesSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D9D0A624227AD400850327 /* RepositoriesSearch.swift */; };
+		A7326A022422D76100157526 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C0F59B22CEB4F0008BEDA2 /* SearchView.swift */; };
+		A7326A032422D76100157526 /* RepositoryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C0F59922CEB4BE008BEDA2 /* RepositoryRow.swift */; };
+		A7326A042422D76100157526 /* RepositoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D9D0B92422817800850327 /* RepositoriesView.swift */; };
+		A7326A052422D76100157526 /* Array+Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D9D0A024227A5D00850327 /* Array+Filter.swift */; };
+		A7326A072422D76100157526 /* GenericError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D9D09D242279D500850327 /* GenericError.swift */; };
+		A7326A082422D76100157526 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D9D0A824227BB800850327 /* NetworkService.swift */; };
+		A7326A092422D76100157526 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D9D0AE24227F6800850327 /* Constants.swift */; };
+		A7326A0A2422D76100157526 /* Decoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D9D09A2422799700850327 /* Decoder.swift */; };
 		A7C0F58422CEABB8008BEDA2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C0F58322CEABB8008BEDA2 /* AppDelegate.swift */; };
 		A7C0F58622CEABB8008BEDA2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C0F58522CEABB8008BEDA2 /* SceneDelegate.swift */; };
 		A7C0F58A22CEABBA008BEDA2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7C0F58922CEABBA008BEDA2 /* Assets.xcassets */; };
@@ -28,7 +50,61 @@
 		A7D9D0BC2422924B00850327 /* View+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D9D0BB2422924B00850327 /* View+Keyboard.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		A73269DE2422D59500157526 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A7C0F57822CEABB8008BEDA2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A73269DB2422D59500157526;
+			remoteInfo = "SearchAppWatch Extension";
+		};
+		A73269F22422D59500157526 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A7C0F57822CEABB8008BEDA2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A73269CF2422D59300157526;
+			remoteInfo = SearchAppWatch;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A73269F52422D59500157526 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				A73269F42422D59500157526 /* SearchAppWatch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A73269F82422D59500157526 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				A73269DD2422D59500157526 /* SearchAppWatch Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		A73269D02422D59300157526 /* SearchAppWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SearchAppWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A73269D52422D59500157526 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A73269D72422D59500157526 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A73269DC2422D59500157526 /* SearchAppWatch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "SearchAppWatch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A73269E32422D59500157526 /* HostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingController.swift; sourceTree = "<group>"; };
+		A73269E52422D59500157526 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		A73269E72422D59500157526 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		A73269E92422D59500157526 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
+		A73269EB2422D59500157526 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A73269EE2422D59500157526 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		A73269F02422D59500157526 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A73269F12422D59500157526 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		A7C0F58022CEABB8008BEDA2 /* SearchApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SearchApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7C0F58322CEABB8008BEDA2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A7C0F58522CEABB8008BEDA2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -53,6 +129,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		A73269D92422D59500157526 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A7C0F57D22CEABB8008BEDA2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -63,10 +146,44 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A73269D12422D59300157526 /* SearchAppWatch */ = {
+			isa = PBXGroup;
+			children = (
+				A73269D52422D59500157526 /* Assets.xcassets */,
+				A73269D72422D59500157526 /* Info.plist */,
+			);
+			path = SearchAppWatch;
+			sourceTree = "<group>";
+		};
+		A73269E02422D59500157526 /* SearchAppWatch Extension */ = {
+			isa = PBXGroup;
+			children = (
+				A73269E32422D59500157526 /* HostingController.swift */,
+				A73269E52422D59500157526 /* ExtensionDelegate.swift */,
+				A73269E72422D59500157526 /* NotificationController.swift */,
+				A73269E92422D59500157526 /* NotificationView.swift */,
+				A73269EB2422D59500157526 /* Assets.xcassets */,
+				A73269F02422D59500157526 /* Info.plist */,
+				A73269F12422D59500157526 /* PushNotificationPayload.apns */,
+				A73269ED2422D59500157526 /* Preview Content */,
+			);
+			path = "SearchAppWatch Extension";
+			sourceTree = "<group>";
+		};
+		A73269ED2422D59500157526 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				A73269EE2422D59500157526 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
 		A7C0F57722CEABB8008BEDA2 = {
 			isa = PBXGroup;
 			children = (
 				A7C0F58222CEABB8008BEDA2 /* SearchApp */,
+				A73269D12422D59300157526 /* SearchAppWatch */,
+				A73269E02422D59500157526 /* SearchAppWatch Extension */,
 				A7C0F58122CEABB8008BEDA2 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -75,6 +192,8 @@
 			isa = PBXGroup;
 			children = (
 				A7C0F58022CEABB8008BEDA2 /* SearchApp.app */,
+				A73269D02422D59300157526 /* SearchAppWatch.app */,
+				A73269DC2422D59500157526 /* SearchAppWatch Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -197,6 +316,40 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		A73269CF2422D59300157526 /* SearchAppWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A73269FC2422D59500157526 /* Build configuration list for PBXNativeTarget "SearchAppWatch" */;
+			buildPhases = (
+				A73269CE2422D59300157526 /* Resources */,
+				A73269F82422D59500157526 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A73269DF2422D59500157526 /* PBXTargetDependency */,
+			);
+			name = SearchAppWatch;
+			productName = SearchAppWatch;
+			productReference = A73269D02422D59300157526 /* SearchAppWatch.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		A73269DB2422D59500157526 /* SearchAppWatch Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A73269FB2422D59500157526 /* Build configuration list for PBXNativeTarget "SearchAppWatch Extension" */;
+			buildPhases = (
+				A73269D82422D59500157526 /* Sources */,
+				A73269D92422D59500157526 /* Frameworks */,
+				A73269DA2422D59500157526 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "SearchAppWatch Extension";
+			productName = "SearchAppWatch Extension";
+			productReference = A73269DC2422D59500157526 /* SearchAppWatch Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
 		A7C0F57F22CEABB8008BEDA2 /* SearchApp */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = A7C0F59422CEABBA008BEDA2 /* Build configuration list for PBXNativeTarget "SearchApp" */;
@@ -204,10 +357,12 @@
 				A7C0F57C22CEABB8008BEDA2 /* Sources */,
 				A7C0F57D22CEABB8008BEDA2 /* Frameworks */,
 				A7C0F57E22CEABB8008BEDA2 /* Resources */,
+				A73269F52422D59500157526 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				A73269F32422D59500157526 /* PBXTargetDependency */,
 			);
 			name = SearchApp;
 			productName = SearchApp;
@@ -220,10 +375,16 @@
 		A7C0F57822CEABB8008BEDA2 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1100;
+				LastSwiftUpdateCheck = 1130;
 				LastUpgradeCheck = 1100;
 				ORGANIZATIONNAME = Leonardo;
 				TargetAttributes = {
+					A73269CF2422D59300157526 = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+					A73269DB2422D59500157526 = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
 					A7C0F57F22CEABB8008BEDA2 = {
 						CreatedOnToolsVersion = 11.0;
 					};
@@ -243,11 +404,30 @@
 			projectRoot = "";
 			targets = (
 				A7C0F57F22CEABB8008BEDA2 /* SearchApp */,
+				A73269CF2422D59300157526 /* SearchAppWatch */,
+				A73269DB2422D59500157526 /* SearchAppWatch Extension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		A73269CE2422D59300157526 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A73269D62422D59500157526 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A73269DA2422D59500157526 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A73269EF2422D59500157526 /* Preview Assets.xcassets in Resources */,
+				A73269EC2422D59500157526 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A7C0F57E22CEABB8008BEDA2 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -261,6 +441,30 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		A73269D82422D59500157526 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A7326A052422D76100157526 /* Array+Filter.swift in Sources */,
+				A7326A092422D76100157526 /* Constants.swift in Sources */,
+				A7326A042422D76100157526 /* RepositoriesView.swift in Sources */,
+				A7326A022422D76100157526 /* SearchView.swift in Sources */,
+				A7326A0A2422D76100157526 /* Decoder.swift in Sources */,
+				A7326A072422D76100157526 /* GenericError.swift in Sources */,
+				A73269E42422D59500157526 /* HostingController.swift in Sources */,
+				A73269FF2422D76100157526 /* RepositoriesBuilder.swift in Sources */,
+				A73269FE2422D76100157526 /* RepositoryRowViewModel.swift in Sources */,
+				A73269E82422D59500157526 /* NotificationController.swift in Sources */,
+				A7326A032422D76100157526 /* RepositoryRow.swift in Sources */,
+				A7326A082422D76100157526 /* NetworkService.swift in Sources */,
+				A73269E62422D59500157526 /* ExtensionDelegate.swift in Sources */,
+				A7326A012422D76100157526 /* RepositoriesSearch.swift in Sources */,
+				A7326A002422D76100157526 /* RepositoriesService.swift in Sources */,
+				A73269FD2422D76100157526 /* RepositoriesViewModel.swift in Sources */,
+				A73269EA2422D59500157526 /* NotificationView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A7C0F57C22CEABB8008BEDA2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -286,6 +490,19 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		A73269DF2422D59500157526 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A73269DB2422D59500157526 /* SearchAppWatch Extension */;
+			targetProxy = A73269DE2422D59500157526 /* PBXContainerItemProxy */;
+		};
+		A73269F32422D59500157526 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A73269CF2422D59300157526 /* SearchAppWatch */;
+			targetProxy = A73269F22422D59500157526 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		A7C0F58E22CEABBA008BEDA2 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -298,6 +515,90 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		A73269F62422D59500157526 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				IBSC_MODULE = SearchAppWatch_Extension;
+				INFOPLIST_FILE = SearchAppWatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.leonardo.SearchApp.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.1;
+			};
+			name = Debug;
+		};
+		A73269F72422D59500157526 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				IBSC_MODULE = SearchAppWatch_Extension;
+				INFOPLIST_FILE = SearchAppWatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.leonardo.SearchApp.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.1;
+			};
+			name = Release;
+		};
+		A73269F92422D59500157526 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"SearchAppWatch Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = R22VMQT29M;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "SearchAppWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.leonardo.SearchApp.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.1;
+			};
+			name = Debug;
+		};
+		A73269FA2422D59500157526 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"SearchAppWatch Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = R22VMQT29M;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "SearchAppWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.leonardo.SearchApp.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.1;
+			};
+			name = Release;
+		};
 		A7C0F59222CEABBA008BEDA2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -453,6 +754,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		A73269FB2422D59500157526 /* Build configuration list for PBXNativeTarget "SearchAppWatch Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A73269F92422D59500157526 /* Debug */,
+				A73269FA2422D59500157526 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A73269FC2422D59500157526 /* Build configuration list for PBXNativeTarget "SearchAppWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A73269F62422D59500157526 /* Debug */,
+				A73269F72422D59500157526 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		A7C0F57B22CEABB8008BEDA2 /* Build configuration list for PBXProject "SearchApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

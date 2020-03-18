@@ -16,16 +16,13 @@ struct RepositoriesView: View {
     }
     
     var body: some View {
-        NavigationView {
-            List {
-                SearchView(viewModel: viewModel)
-                
-                if viewModel.dataSource.isEmpty {
-                    emptySection
-                } else {
-                    searchingForSection
-                    forecastSection
-                }
+        #if os(watchOS)
+            return list
+        #else
+            return NavigationView {
+                list
+                .listStyle(GroupedListStyle())
+                .navigationBarTitle("GitHub Search 👨🏻‍💻")
             }
             .gesture(DragGesture().onChanged({ (_) in
                 self.dismissKeyboard()
@@ -33,13 +30,24 @@ struct RepositoriesView: View {
             .onTapGesture {
                 self.dismissKeyboard()
             }
-            .listStyle(GroupedListStyle())
-            .navigationBarTitle("GitHub Search 👨🏻‍💻")
-        }
+        #endif
     }
 }
 
 private extension RepositoriesView {
+    
+    var list: some View {
+        List {
+            SearchView(viewModel: viewModel)
+            
+            if viewModel.dataSource.isEmpty {
+                emptySection
+            } else {
+                searchingForSection
+                forecastSection
+            }
+        }
+    }
     
     var forecastSection: some View {
         Section {
