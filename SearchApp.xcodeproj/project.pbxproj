@@ -27,6 +27,7 @@
 		A7D9D0B62422814600850327 /* RepositoriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D9D0B52422814600850327 /* RepositoriesViewModel.swift */; };
 		A7D9D0B82422815400850327 /* RepositoryRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D9D0B72422815400850327 /* RepositoryRowViewModel.swift */; };
 		A7D9D0BA2422817800850327 /* RepositoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D9D0B92422817800850327 /* RepositoriesView.swift */; };
+		A7D9D0BC2422924B00850327 /* View+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D9D0BB2422924B00850327 /* View+Keyboard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		A7D9D0B52422814600850327 /* RepositoriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesViewModel.swift; sourceTree = "<group>"; };
 		A7D9D0B72422815400850327 /* RepositoryRowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryRowViewModel.swift; sourceTree = "<group>"; };
 		A7D9D0B92422817800850327 /* RepositoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesView.swift; sourceTree = "<group>"; };
+		A7D9D0BB2422924B00850327 /* View+Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Keyboard.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				A7D9D0A024227A5D00850327 /* Array+Filter.swift */,
+				A7D9D0BB2422924B00850327 /* View+Keyboard.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -277,6 +280,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7D9D0A924227BB800850327 /* NetworkService.swift in Sources */,
+				A7D9D0BC2422924B00850327 /* View+Keyboard.swift in Sources */,
 				A7D9D0B32422810D00850327 /* RepositoriesBuilder.swift in Sources */,
 				A7D9D0AD24227C8B00850327 /* RepositoriesService.swift in Sources */,
 				A7C0F59C22CEB4F0008BEDA2 /* SearchView.swift in Sources */,
