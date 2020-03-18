@@ -62,8 +62,13 @@ private extension RepositoriesView {
     
     var emptySection: some View {
         Section {
-            Text("No results")
-                .foregroundColor(.gray)
+            if viewModel.isLoading {
+                Text("Loading some results for you... 🤔")
+                    .foregroundColor(.gray)
+            } else {
+                Text("No results")
+                    .foregroundColor(.gray)
+            }
         }
     }
 }

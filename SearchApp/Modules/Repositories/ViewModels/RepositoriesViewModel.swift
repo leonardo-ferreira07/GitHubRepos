@@ -12,6 +12,7 @@ import Combine
 class RepositoriesViewModel: ObservableObject {
     @Published var searchText: String = ""
     @Published var dataSource: [RepositoryRowViewModel] = []
+    @Published var isLoading: Bool = false
     
     private let repositoriesFetcher: RepositoriesService
     private var disposables = Set<AnyCancellable>()
@@ -27,6 +28,7 @@ class RepositoriesViewModel: ObservableObject {
     }
     
     func fetchRepositories(forsearchText searchText: String) {
+        DispatchQueue.main.async { [weak self] in self?.isLoading = true }
         repositoriesFetcher.fetchRepositories(forText: searchText)
         .map { response in
             response.items.map(RepositoryRowViewModel.init)
@@ -38,14 +40,16 @@ class RepositoriesViewModel: ObservableObject {
             switch value {
             case .failure( let error):
                 print("## \(error)")
+                self.isLoading = false
                 self.dataSource = []
             case .finished:
                 break
             }
         },
-        receiveValue: { [weak self] forecast in
+        receiveValue: { [weak self] repos in
             guard let self = self else { return }
-            self.dataSource = forecast
+            self.isLoading = false
+            self.dataSource = repos
         })
         .store(in: &disposables)
     }
