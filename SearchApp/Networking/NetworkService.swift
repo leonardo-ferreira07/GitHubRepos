@@ -9,11 +9,6 @@
 import Foundation
 import Combine
 
-//protocol WeatherFetchable {
-//  func weeklyWeatherForecast(forCity city: String) -> AnyPublisher<WeeklyForecastResponse, WeatherError>
-//  func currentWeatherForecast(forCity city: String) -> AnyPublisher<CurrentWeatherForecastResponse, WeatherError>
-//}
-
 class NetworkService {
   private let session: URLSession
   
