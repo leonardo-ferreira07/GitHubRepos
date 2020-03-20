@@ -26,8 +26,9 @@ class RepositoriesViewModel: ObservableObject {
             .store(in: &disposables)
     }
     
-    func fetchRepositories(forsearchText searchText: String) {
+    private func fetchRepositories(forsearchText searchText: String) {
         DispatchQueue.main.async { [weak self] in self?.isLoading = true }
+        
         repositoriesFetcher.fetchRepositories(forText: searchText)
         .map { response in
             response.items.map(RepositoryRowViewModel.init)
