@@ -12,4 +12,5 @@ struct GitHubAPI {
     static let scheme = "https"
     static let host = "api.github.com"
     static let searchPath = "/search"
+    static let pullRequestsPath = "/repos"
 }
