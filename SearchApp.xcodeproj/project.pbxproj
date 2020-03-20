@@ -45,6 +45,8 @@
 		A75B259F242529DA00C80A5A /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75B259D242529DA00C80A5A /* LoadingView.swift */; };
 		A75B25A224252FDB00C80A5A /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75B25A124252FDB00C80A5A /* ViewModel.swift */; };
 		A75B25A324252FDB00C80A5A /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75B25A124252FDB00C80A5A /* ViewModel.swift */; };
+		A75B25AF242548D500C80A5A /* PullRequestsBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75B25AE242548D500C80A5A /* PullRequestsBuilder.swift */; };
+		A75B25B0242548D500C80A5A /* PullRequestsBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75B25AE242548D500C80A5A /* PullRequestsBuilder.swift */; };
 		A7C0F58422CEABB8008BEDA2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C0F58322CEABB8008BEDA2 /* AppDelegate.swift */; };
 		A7C0F58622CEABB8008BEDA2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C0F58522CEABB8008BEDA2 /* SceneDelegate.swift */; };
 		A7C0F58A22CEABBA008BEDA2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7C0F58922CEABBA008BEDA2 /* Assets.xcassets */; };
@@ -129,6 +131,7 @@
 		A75B2599242518FC00C80A5A /* PullRequestsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullRequestsView.swift; sourceTree = "<group>"; };
 		A75B259D242529DA00C80A5A /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		A75B25A124252FDB00C80A5A /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		A75B25AE242548D500C80A5A /* PullRequestsBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullRequestsBuilder.swift; sourceTree = "<group>"; };
 		A7C0F58022CEABB8008BEDA2 /* SearchApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SearchApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7C0F58322CEABB8008BEDA2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A7C0F58522CEABB8008BEDA2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -205,6 +208,7 @@
 		A75B25842425075900C80A5A /* Pull Requests */ = {
 			isa = PBXGroup;
 			children = (
+				A75B25AE242548D500C80A5A /* PullRequestsBuilder.swift */,
 				A75B259224250BE100C80A5A /* Service */,
 				A75B258E2425094900C80A5A /* ViewModels */,
 				A75B2589242508F800C80A5A /* Views */,
@@ -349,8 +353,8 @@
 		A7D9D0A324227AA600850327 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
+				A7D9D0B22422810D00850327 /* RepositoriesBuilder.swift */,
 				A7D9D0B42422813A00850327 /* ViewModels */,
-				A7D9D0B1242280FE00850327 /* Builder */,
 				A7D9D0AA24227C7300850327 /* Service */,
 				A7D9D0A524227AB200850327 /* Models */,
 				A7D9D0A424227AAE00850327 /* Views */,
@@ -382,14 +386,6 @@
 				A7D9D0AC24227C8B00850327 /* RepositoriesService.swift */,
 			);
 			path = Service;
-			sourceTree = "<group>";
-		};
-		A7D9D0B1242280FE00850327 /* Builder */ = {
-			isa = PBXGroup;
-			children = (
-				A7D9D0B22422810D00850327 /* RepositoriesBuilder.swift */,
-			);
-			path = Builder;
 			sourceTree = "<group>";
 		};
 		A7D9D0B42422813A00850327 /* ViewModels */ = {
@@ -537,6 +533,7 @@
 				A75B259524250BF700C80A5A /* PullRequestsService.swift in Sources */,
 				A7326A052422D76100157526 /* Array+Filter.swift in Sources */,
 				A7326A092422D76100157526 /* Constants.swift in Sources */,
+				A75B25B0242548D500C80A5A /* PullRequestsBuilder.swift in Sources */,
 				A75B259F242529DA00C80A5A /* LoadingView.swift in Sources */,
 				A75B25A324252FDB00C80A5A /* ViewModel.swift in Sources */,
 				A7326A042422D76100157526 /* RepositoriesView.swift in Sources */,
@@ -584,6 +581,7 @@
 				A75B2597242517B600C80A5A /* PullRequestDetailViewModel.swift in Sources */,
 				A75B259424250BF700C80A5A /* PullRequestsService.swift in Sources */,
 				A7C0F59A22CEB4BE008BEDA2 /* RepositoryRow.swift in Sources */,
+				A75B25AF242548D500C80A5A /* PullRequestsBuilder.swift in Sources */,
 				A7D9D0B62422814600850327 /* RepositoriesViewModel.swift in Sources */,
 				A75B258B2425091D00C80A5A /* PullRequestView.swift in Sources */,
 				A7D9D0A124227A5D00850327 /* Array+Filter.swift in Sources */,

@@ -11,8 +11,11 @@ import SwiftUI
 struct RepositoriesView: View {
     @ObservedObject var viewModel: RepositoriesViewModel
     
+    private let pullRequestsBuilder: PullRequestsBuilder
+    
     init(viewModel: RepositoriesViewModel) {
         self.viewModel = viewModel
+        self.pullRequestsBuilder = .init()
     }
     
     var body: some View {
@@ -51,10 +54,8 @@ private extension RepositoriesView {
     
     var repositoriesSection: some View {
         Section {
-            ForEach(viewModel.dataSource) { repo in
-                NavigationLink(destination: PullRequestsView(viewModel: PullRequestViewModel(pullRequestsFetcher: PullRequestsService(), owner: repo.ownerName, repository: repo.name))) {
-                    RepositoryRow.init(viewModel: repo)
-                }
+            ForEach(viewModel.dataSource) { (repo) in
+                self.navigateToPullRequests(repo)
             }
         }
     }
@@ -70,4 +71,18 @@ private extension RepositoriesView {
         }
     }
     
+}
+
+// MARK: - Navigation
+
+extension RepositoriesView {
+    private func navigateToPullRequests(_ repo: RepositoryRowViewModel) -> NavigationLink<RepositoryRow, PullRequestsView> {
+        let view = self.pullRequestsBuilder.makePullRequestsView(
+                                                                pullRequestsFetcher: PullRequestsService(),
+                                                                owner: repo.ownerName,
+                                                                repository: repo.name)
+        return NavigationLink(destination: view) {
+            RepositoryRow.init(viewModel: repo)
+        }
+    }
 }

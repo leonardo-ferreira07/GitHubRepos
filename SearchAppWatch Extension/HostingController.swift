@@ -12,6 +12,6 @@ import SwiftUI
 
 class HostingController: WKHostingController<RepositoriesView> {
     override var body: RepositoriesView {
-        RepositoriesBuilder.makeRepositoriesView(repositoriesFetcher: RepositoriesService())
+        RepositoriesBuilder().makeRepositoriesView(repositoriesFetcher: RepositoriesService())
     }
 }

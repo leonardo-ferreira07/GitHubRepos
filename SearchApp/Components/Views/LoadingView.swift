@@ -25,7 +25,7 @@ struct LoadingView: View {
                 Text("Loading some things for you... 🤔")
                     .foregroundColor(.gray)
             } else {
-                Text("No things found, try again later.")
+                Text("No things found, try again later. 🤷🏻‍♂")
                     .foregroundColor(.gray)
             }
         }
