@@ -32,8 +32,8 @@ struct LoadingView: View {
     }
 }
 
-//struct LoadingView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        LoadingView(isLo)
-//    }
-//}
+struct LoadingView_Previews: PreviewProvider {
+    static var previews: some View {
+        LoadingView(viewModel: ViewModel())
+    }
+}
