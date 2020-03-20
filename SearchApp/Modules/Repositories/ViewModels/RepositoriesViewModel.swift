@@ -17,8 +17,7 @@ class RepositoriesViewModel: ObservableObject {
     private let repositoriesFetcher: RepositoriesService
     private var disposables = Set<AnyCancellable>()
     
-    init(repositoriesFetcher: RepositoriesService, scheduler: DispatchQueue = DispatchQueue(label: "RepositoriesViewModel")
-    ) {
+    init(repositoriesFetcher: RepositoriesService, scheduler: DispatchQueue = DispatchQueue(label: "RepositoriesViewModel")) {
         self.repositoriesFetcher = repositoriesFetcher
         $searchText
             .dropFirst(1)
