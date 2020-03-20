@@ -22,10 +22,10 @@ struct LoadingView: View {
     var emptySection: some View {
         Section {
             if viewModel.isLoading {
-                Text("Loading some results for you... 🤔")
+                Text("Loading some things for you... 🤔")
                     .foregroundColor(.gray)
             } else {
-                Text("No results")
+                Text("No things found, try again later.")
                     .foregroundColor(.gray)
             }
         }
