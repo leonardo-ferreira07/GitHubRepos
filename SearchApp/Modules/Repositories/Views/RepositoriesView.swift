@@ -23,12 +23,12 @@ struct RepositoriesView: View {
                 list
                 .listStyle(GroupedListStyle())
                 .navigationBarTitle("GitHub Search 👨🏻‍💻")
-            }
-            .gesture(DragGesture().onChanged({ (_) in
-                self.dismissKeyboard()
-            }))
-            .onTapGesture {
-                self.dismissKeyboard()
+                .gesture(DragGesture().onChanged({ (_) in
+                    self.dismissKeyboard()
+                }))
+//                .onTapGesture {
+//                    self.dismissKeyboard()
+//                }
             }
         #endif
     }
@@ -41,42 +41,33 @@ private extension RepositoriesView {
             SearchView(viewModel: viewModel)
             
             if viewModel.dataSource.isEmpty {
-                emptySection
+                LoadingView(viewModel: viewModel)
             } else {
                 searchingForSection
-                forecastSection
+                repositoriesSection
             }
         }
     }
     
-    var forecastSection: some View {
+    var repositoriesSection: some View {
         Section {
-            ForEach(viewModel.dataSource, content: RepositoryRow.init(viewModel:))
+            ForEach(viewModel.dataSource) { repo in
+                NavigationLink(destination: PullRequestsView(viewModel: PullRequestViewModel(pullRequestsFetcher: PullRequestsService(), owner: repo.ownerName, repository: repo.name))) {
+                    RepositoryRow.init(viewModel: repo)
+                }
+            }
         }
     }
     
     var searchingForSection: some View {
         Section {
-            //      NavigationLink(destination: viewModel.currentRepository) {
             VStack(alignment: .leading) {
                 Text("Searching for:")
                 Text(viewModel.searchText)
                     .font(.caption)
                     .foregroundColor(.gray)
             }
-            //      }
         }
     }
     
-    var emptySection: some View {
-        Section {
-            if viewModel.isLoading {
-                Text("Loading some results for you... 🤔")
-                    .foregroundColor(.gray)
-            } else {
-                Text("No results")
-                    .foregroundColor(.gray)
-            }
-        }
-    }
 }

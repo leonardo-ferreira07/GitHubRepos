@@ -9,9 +9,8 @@
 import Foundation
 import Combine
 
-class PullRequestViewModel: ObservableObject {
+class PullRequestViewModel: ViewModel {
     @Published var dataSource: [PullRequestDetailViewModel] = []
-    @Published var isLoading: Bool = false
 
     private var disposables = Set<AnyCancellable>()
     private let owner: String
@@ -22,12 +21,10 @@ class PullRequestViewModel: ObservableObject {
         self.pullRequestsFetcher = pullRequestsFetcher
         self.owner = owner
         self.repository = repository
-        
-        fetchPullRequests()
     }
     
-    private func fetchPullRequests() {
-        DispatchQueue.main.async { [weak self] in self?.isLoading = true }
+    func fetchPullRequests() {
+        DispatchQueue.main.async { [weak self] in self?.startLoading() }
         
         pullRequestsFetcher.fetchPullRequests(withOwner: owner, repository: repository)
         .map { response in
@@ -40,7 +37,7 @@ class PullRequestViewModel: ObservableObject {
             switch value {
             case .failure( let error):
                 print("## \(error)")
-                self.isLoading = false
+                self.stopLoading()
                 self.dataSource = []
             case .finished:
                 break
@@ -48,7 +45,7 @@ class PullRequestViewModel: ObservableObject {
         },
         receiveValue: { [weak self] pullRequests in
             guard let self = self else { return }
-            self.isLoading = false
+            self.stopLoading()
             self.dataSource = pullRequests
         })
         .store(in: &disposables)

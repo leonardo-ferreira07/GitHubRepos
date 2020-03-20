@@ -8,8 +8,8 @@
 
 import SwiftUI
 
-struct SearchView : View {
-    @ObservedObject var viewModel: RepositoriesViewModel
+struct SearchView: View {
+    @ObservedObject private var viewModel: RepositoriesViewModel
     
     init(viewModel: RepositoriesViewModel) {
         self.viewModel = viewModel
@@ -23,7 +23,7 @@ struct SearchView : View {
 }
 
 #if DEBUG
-struct SearchView_Previews : PreviewProvider {
+struct SearchView_Previews: PreviewProvider {
     static var previews: some View {
         SearchView(viewModel: RepositoriesViewModel(repositoriesFetcher: RepositoriesService()))
     }

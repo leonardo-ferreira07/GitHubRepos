@@ -21,6 +21,10 @@ struct RepositoryRowViewModel: Identifiable {
         "\(repository.id)"
     }
     
+    var ownerName: String {
+        repository.owner.login
+    }
+    
     var name: String {
         repository.name ?? "No name returned from GitHub API"
     }

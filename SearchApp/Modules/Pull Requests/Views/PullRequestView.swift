@@ -9,13 +9,19 @@
 import SwiftUI
 
 struct PullRequestView: View {
+    private let viewModel: PullRequestDetailViewModel
+    
+    init(viewModel: PullRequestDetailViewModel) {
+      self.viewModel = viewModel
+    }
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text(viewModel.id)
     }
 }
 
 struct PullRequestView_Previews: PreviewProvider {
     static var previews: some View {
-        PullRequestView()
+        PullRequestView(viewModel: PullRequestDetailViewModel(item: PullRequest(title: "", body: "", date: "", user: RepositoryOwner(login: "", avatar: ""))))
     }
 }

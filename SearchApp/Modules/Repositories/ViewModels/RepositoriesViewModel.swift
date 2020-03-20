@@ -9,16 +9,16 @@
 import Foundation
 import Combine
 
-class RepositoriesViewModel: ObservableObject {
+class RepositoriesViewModel: ViewModel {
     @Published var searchText: String = ""
     @Published var dataSource: [RepositoryRowViewModel] = []
-    @Published var isLoading: Bool = false
     
     private let repositoriesFetcher: RepositoriesService
     private var disposables = Set<AnyCancellable>()
     
     init(repositoriesFetcher: RepositoriesService, scheduler: DispatchQueue = DispatchQueue(label: "RepositoriesViewModel")) {
         self.repositoriesFetcher = repositoriesFetcher
+        super.init()
         $searchText
             .dropFirst(1)
             .debounce(for: .seconds(0.5), scheduler: scheduler)
@@ -27,7 +27,7 @@ class RepositoriesViewModel: ObservableObject {
     }
     
     private func fetchRepositories(forsearchText searchText: String) {
-        DispatchQueue.main.async { [weak self] in self?.isLoading = true }
+        DispatchQueue.main.async { [weak self] in self?.startLoading() }
         
         repositoriesFetcher.fetchRepositories(forText: searchText)
         .map { response in
@@ -40,7 +40,7 @@ class RepositoriesViewModel: ObservableObject {
             switch value {
             case .failure( let error):
                 print("## \(error)")
-                self.isLoading = false
+                self.stopLoading()
                 self.dataSource = []
             case .finished:
                 break
@@ -48,7 +48,7 @@ class RepositoriesViewModel: ObservableObject {
         },
         receiveValue: { [weak self] repos in
             guard let self = self else { return }
-            self.isLoading = false
+            self.stopLoading()
             self.dataSource = repos
         })
         .store(in: &disposables)

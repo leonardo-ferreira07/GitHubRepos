@@ -37,7 +37,7 @@ private extension PullRequestsService {
         var components = URLComponents()
         components.scheme = GitHubAPI.scheme
         components.host = GitHubAPI.host
-        components.path = GitHubAPI.pullRequestsPath + "/\(owner)/\(repository)/pulls"
+        components.path = GitHubAPI.reposPath + "/\(owner)/\(repository)/pulls"
         
         return components
     }

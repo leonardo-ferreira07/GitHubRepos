@@ -26,7 +26,7 @@ struct RepositoryRow: View {
     }
 }
 #if DEBUG
-struct RepoRow_Previews : PreviewProvider {
+struct RepoRow_Previews: PreviewProvider {
     static var previews: some View {
         RepositoryRow(viewModel: RepositoryRowViewModel(item: Repository(id: 1, name: "test", description: "test description", owner: RepositoryOwner(login: "login", avatar: "avatar.url.com"))))
     }

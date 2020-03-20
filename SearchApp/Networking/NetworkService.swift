@@ -26,6 +26,7 @@ extension NetworkService {
             let error = GenericError.network(description: "Couldn't create URL")
             return Fail(error: error).eraseToAnyPublisher()
         }
+        
         return session.dataTaskPublisher(for: URLRequest(url: url))
             .mapError { error in
                 .network(description: error.localizedDescription)

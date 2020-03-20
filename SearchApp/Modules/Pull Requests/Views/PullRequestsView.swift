@@ -9,13 +9,30 @@
 import SwiftUI
 
 struct PullRequestsView: View {
+    @ObservedObject var viewModel: PullRequestViewModel
+
+    init(viewModel: PullRequestViewModel) {
+      self.viewModel = viewModel
+    }
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        List {
+            if viewModel.dataSource.isEmpty {
+                LoadingView(viewModel: viewModel)
+            } else {
+                Section {
+                    ForEach(viewModel.dataSource, content: PullRequestView.init(viewModel:))
+                }
+            }
+        }
+        .onAppear(perform: viewModel.fetchPullRequests)
+        
     }
 }
 
 struct PullRequestsView_Previews: PreviewProvider {
     static var previews: some View {
-        PullRequestsView()
+        PullRequestsView(viewModel: PullRequestViewModel(pullRequestsFetcher: PullRequestsService(), owner: "", repository: ""))
     }
 }
