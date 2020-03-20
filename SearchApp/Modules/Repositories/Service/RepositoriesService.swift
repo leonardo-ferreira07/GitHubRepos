@@ -10,7 +10,7 @@ import Foundation
 import Combine
 
 protocol RepositoriesFetchable {
-    func fetchRepositories(forText text: String) -> AnyPublisher<SearchResponse, GenericError>
+    func fetchRepositories(forText text: String) -> AnyPublisher<Repositories, GenericError>
 }
 
 struct RepositoriesService {
@@ -25,7 +25,7 @@ struct RepositoriesService {
 // MARK: - Fetchable
 
 extension RepositoriesService: RepositoriesFetchable {
-    func fetchRepositories(forText text: String) -> AnyPublisher<SearchResponse, GenericError> {
+    func fetchRepositories(forText text: String) -> AnyPublisher<Repositories, GenericError> {
         return requester.request(with: makeRepositoriesSearch(withText: text))
     }
 }
