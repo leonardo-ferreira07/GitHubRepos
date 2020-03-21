@@ -11,10 +11,10 @@ import Combine
 
 class PullRequestViewModel: ViewModel {
     @Published var dataSource: [PullRequestDetailViewModel] = []
-
+    let repository: String
+    
     private var disposables = Set<AnyCancellable>()
     private let owner: String
-    private let repository: String
     private let pullRequestsFetcher: PullRequestsService
     
     init(pullRequestsFetcher: PullRequestsService, owner: String, repository: String) {

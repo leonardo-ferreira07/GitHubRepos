@@ -20,6 +20,10 @@ struct PullRequestDetailViewModel: Identifiable {
     var id: String {
         "\(pullRequest.user.login)"
     }
+    
+    var title: String {
+        pullRequest.title
+    }
 }
 
 extension PullRequestDetailViewModel: Hashable {

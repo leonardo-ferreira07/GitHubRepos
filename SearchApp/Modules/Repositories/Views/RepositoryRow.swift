@@ -16,12 +16,22 @@ struct RepositoryRow: View {
     }
     
     var body: some View {
-        VStack(alignment: .leading) {
+        VStack(alignment: .leading, spacing: 10) {
             Text(viewModel.name)
                 .font(.headline)
+                .fixedSize(horizontal: false, vertical: true)
+            
+            HStack(spacing: 5) {
+                Text("Owner:")
+                    .font(.subheadline)
+                Text(viewModel.ownerName)
+                    .font(.subheadline)
+            }
+            
             Text(viewModel.description)
-                .font(.subheadline)
+                .font(.body)
                 .foregroundColor(viewModel.descriptionColor)
+                .fixedSize(horizontal: false, vertical: true)
         }
     }
 }

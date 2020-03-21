@@ -16,7 +16,19 @@ struct PullRequestView: View {
     }
     
     var body: some View {
-        Text(viewModel.id)
+        VStack(alignment: .leading, spacing: 10) {
+            HStack(spacing: 10) {
+                #if os(iOS)
+                    Text("Proposed by:")
+                        .font(.headline)
+                #endif
+                Text(viewModel.id)
+                    .font(.body)
+            }
+            Text(viewModel.title)
+                .font(.body)
+                .fixedSize(horizontal: false, vertical: true)
+        }
     }
 }
 

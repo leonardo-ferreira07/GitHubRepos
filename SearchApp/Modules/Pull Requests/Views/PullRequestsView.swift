@@ -16,16 +16,31 @@ struct PullRequestsView: View {
     }
     
     var body: some View {
-        
-        List {
-            if viewModel.dataSource.isEmpty {
-                LoadingView(viewModel: viewModel)
-            } else {
-                Section {
-                    ForEach(viewModel.dataSource, content: PullRequestView.init(viewModel:))
+        VStack(alignment: .leading, spacing: 20) {
+            Spacer()
+            #if os(iOS)
+                HStack(spacing: 10) {
+                    Text("Repository:")
+                        .font(.headline)
+                    Text(viewModel.repository)
+                        .font(.subheadline)
+                        .fixedSize(horizontal: false, vertical: true)
+                }
+                .padding(.leading, 20)
+            #endif
+            
+            List {
+                if viewModel.dataSource.isEmpty {
+                    LoadingView(viewModel: viewModel)
+                } else {
+                    Section {
+                        ForEach(viewModel.dataSource, content: PullRequestView.init(viewModel:))
+                    }
                 }
             }
+            
         }
+        .navigationBarTitle("Pull Requests")
         .onAppear(perform: viewModel.fetchPullRequests)
         
     }
