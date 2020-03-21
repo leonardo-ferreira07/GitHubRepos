@@ -11,7 +11,8 @@ import SwiftUI
 struct RepositoriesBuilder {
     func makeRepositoriesView(repositoriesFetcher: RepositoriesService) -> RepositoriesView {
         let viewModel = RepositoriesViewModel(repositoriesFetcher: repositoriesFetcher)
-        return RepositoriesView(viewModel: viewModel)
+        let repoNavigator = RepositoriesNavigator(pullRequestsBuilder: PullRequestsBuilder())
+        return RepositoriesView(viewModel: viewModel, repositoriesNavigator: repoNavigator)
     }
     
 }

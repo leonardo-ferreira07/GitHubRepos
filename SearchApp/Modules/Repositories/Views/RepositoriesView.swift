@@ -12,10 +12,13 @@ struct RepositoriesView: View {
     @ObservedObject var viewModel: RepositoriesViewModel
     
     private let pullRequestsBuilder: PullRequestsBuilder
+    private let repositoriesNavigator: RepositoriesNavigator
     
-    init(viewModel: RepositoriesViewModel) {
+    init(viewModel: RepositoriesViewModel,
+         repositoriesNavigator: RepositoriesNavigator) {
         self.viewModel = viewModel
         self.pullRequestsBuilder = .init()
+        self.repositoriesNavigator = repositoriesNavigator
     }
     
     var body: some View {
@@ -29,9 +32,6 @@ struct RepositoriesView: View {
                 .gesture(DragGesture().onChanged({ (_) in
                     self.dismissKeyboard()
                 }))
-//                .onTapGesture {
-//                    self.dismissKeyboard()
-//                }
             }
         #endif
     }
@@ -55,7 +55,7 @@ private extension RepositoriesView {
     var repositoriesSection: some View {
         Section {
             ForEach(viewModel.dataSource) { (repo) in
-                self.navigateToPullRequests(repo)
+                self.repositoriesNavigator.navigateToPullRequests(repo)
             }
         }
     }
@@ -71,18 +71,4 @@ private extension RepositoriesView {
         }
     }
     
-}
-
-// MARK: - Navigation
-
-extension RepositoriesView {
-    private func navigateToPullRequests(_ repo: RepositoryRowViewModel) -> NavigationLink<RepositoryRow, PullRequestsView> {
-        let view = self.pullRequestsBuilder.makePullRequestsView(
-                                                                pullRequestsFetcher: PullRequestsService(),
-                                                                owner: repo.ownerName,
-                                                                repository: repo.name)
-        return NavigationLink(destination: view) {
-            RepositoryRow.init(viewModel: repo)
-        }
-    }
 }
