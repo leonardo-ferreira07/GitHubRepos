@@ -41,7 +41,7 @@ struct PullRequestsView: View {
             
         }
         .navigationBarTitle("Pull Requests")
-        .onAppear(perform: viewModel.fetchPullRequests)
+        .onAppear(perform: viewModel.onAppear)
         
     }
 }

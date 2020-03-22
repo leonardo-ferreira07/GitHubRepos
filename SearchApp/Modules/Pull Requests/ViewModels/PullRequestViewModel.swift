@@ -10,7 +10,7 @@ import Foundation
 import Combine
 
 class PullRequestViewModel: ViewModel {
-    @Published var dataSource: [PullRequestDetailViewModel] = []
+    @Published private(set) var dataSource: [PullRequestDetailViewModel] = []
     let repository: String
     
     private var disposables = Set<AnyCancellable>()
@@ -23,7 +23,12 @@ class PullRequestViewModel: ViewModel {
         self.repository = repository
     }
     
-    func fetchPullRequests() {
+    // MARK: - Methods
+    func onAppear() {
+        fetchPullRequests()
+    }
+    
+    private func fetchPullRequests() {
         DispatchQueue.main.async { [weak self] in self?.startLoading() }
         
         pullRequestsFetcher.fetchPullRequests(withOwner: owner, repository: repository)

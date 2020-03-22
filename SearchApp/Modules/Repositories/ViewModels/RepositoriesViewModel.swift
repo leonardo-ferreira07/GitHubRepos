@@ -11,7 +11,7 @@ import Combine
 
 class RepositoriesViewModel: ViewModel {
     @Published var searchText: String = ""
-    @Published var dataSource: [RepositoryRowViewModel] = []
+    @Published private(set) var dataSource: [RepositoryRowViewModel] = []
     
     private let repositoriesFetcher: RepositoriesService
     private var disposables = Set<AnyCancellable>()
@@ -19,6 +19,7 @@ class RepositoriesViewModel: ViewModel {
     init(repositoriesFetcher: RepositoriesService, scheduler: DispatchQueue = DispatchQueue(label: "RepositoriesViewModel")) {
         self.repositoriesFetcher = repositoriesFetcher
         super.init()
+        
         $searchText
             .dropFirst(1)
             .debounce(for: .seconds(0.5), scheduler: scheduler)
