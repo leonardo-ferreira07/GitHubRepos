@@ -2,7 +2,7 @@
 //  NotificationController.swift
 //  SearchAppWatch Extension
 //
-//  Created by Leonardo Vinicius Kaminski Ferreira on 18/03/20.
+//  Created by Leonardo Vinicius Kaminski Ferreira on 24/03/20.
 //  Copyright © 2020 Leonardo. All rights reserved.
 //
 
