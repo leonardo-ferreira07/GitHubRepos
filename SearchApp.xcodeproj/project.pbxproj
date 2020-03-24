@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,7 +15,7 @@
 		A73269EA2422D59500157526 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73269E92422D59500157526 /* NotificationView.swift */; };
 		A73269EC2422D59500157526 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A73269EB2422D59500157526 /* Assets.xcassets */; };
 		A73269EF2422D59500157526 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A73269EE2422D59500157526 /* Preview Assets.xcassets */; };
-		A73269F42422D59500157526 /* SearchAppWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = A73269D02422D59300157526 /* SearchAppWatch.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A73269F42422D59500157526 /* SearchAppWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = A73269D02422D59300157526 /* SearchAppWatch.app */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		A73269FD2422D76100157526 /* RepositoriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D9D0B52422814600850327 /* RepositoriesViewModel.swift */; };
 		A73269FE2422D76100157526 /* RepositoryRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D9D0B72422815400850327 /* RepositoryRowViewModel.swift */; };
 		A73269FF2422D76100157526 /* RepositoriesBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D9D0B22422810D00850327 /* RepositoriesBuilder.swift */; };
@@ -146,6 +146,7 @@
 		A7C0F59122CEABBA008BEDA2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A7C0F59922CEB4BE008BEDA2 /* RepositoryRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryRow.swift; sourceTree = "<group>"; };
 		A7C0F59B22CEB4F0008BEDA2 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		A7C38B20242AA7840021377A /* SearchApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SearchApp.entitlements; sourceTree = "<group>"; };
 		A7D9D09A2422799700850327 /* Decoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decoder.swift; sourceTree = "<group>"; };
 		A7D9D09D242279D500850327 /* GenericError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericError.swift; sourceTree = "<group>"; };
 		A7D9D0A024227A5D00850327 /* Array+Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Filter.swift"; sourceTree = "<group>"; };
@@ -297,6 +298,7 @@
 		A7C0F58222CEABB8008BEDA2 /* SearchApp */ = {
 			isa = PBXGroup;
 			children = (
+				A7C38B20242AA7840021377A /* SearchApp.entitlements */,
 				A75B259C242529CB00C80A5A /* Components */,
 				A7D9D0A224227AA000850327 /* Modules */,
 				A7D9D09F24227A5100850327 /* Extensions */,
@@ -612,6 +614,7 @@
 		};
 		A73269F32422D59500157526 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
+			platformFilter = ios;
 			target = A73269CF2422D59300157526 /* SearchAppWatch */;
 			targetProxy = A73269F22422D59500157526 /* PBXContainerItemProxy */;
 		};
@@ -831,8 +834,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SearchApp/SearchApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "SearchApp/Preview\\ Content";
+				DEVELOPMENT_TEAM = R22VMQT29M;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = SearchApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -841,6 +846,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.leonardo.SearchApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -850,8 +856,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SearchApp/SearchApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "SearchApp/Preview\\ Content";
+				DEVELOPMENT_TEAM = R22VMQT29M;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = SearchApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -860,6 +868,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.leonardo.SearchApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
