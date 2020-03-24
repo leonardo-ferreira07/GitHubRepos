@@ -18,7 +18,7 @@ struct PullRequestView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
             HStack(spacing: 10) {
-                #if os(iOS)
+                #if os(iOS) || os(macOS)
                     Text("Proposed by:")
                         .font(.headline)
                 #endif
