@@ -32,8 +32,17 @@ struct RepositoriesView: View {
                 .gesture(DragGesture().onChanged({ (_) in
                     self.dismissKeyboard()
                 }))
+                .padding(.top, padding)
             }
         #endif
+    }
+    
+    private var padding: CGFloat {
+        var padding: CGFloat = 0
+        #if targetEnvironment(macCatalyst)
+            padding = 1
+        #endif
+        return padding
     }
 }
 
