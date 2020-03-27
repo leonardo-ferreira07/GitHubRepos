@@ -24,6 +24,7 @@ struct RepositoriesView: View {
     var body: some View {
         #if os(watchOS)
             return list
+                    .onDisappear(perform: viewModel.onDisappear)
         #else
             return NavigationView {
                 list
@@ -33,6 +34,7 @@ struct RepositoriesView: View {
                     self.dismissKeyboard()
                 }))
                 .padding(.top, padding)
+                .onDisappear(perform: viewModel.onDisappear)
             }
         #endif
     }
