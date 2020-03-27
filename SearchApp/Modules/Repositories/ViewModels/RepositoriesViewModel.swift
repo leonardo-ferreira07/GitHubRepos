@@ -10,11 +10,11 @@ import Foundation
 import Combine
 
 class RepositoriesViewModel: ViewModel {
+    
     @Published var searchText: String = ""
     @Published private(set) var dataSource: [RepositoryRowViewModel] = []
     
     private let repositoriesFetcher: RepositoriesService
-    private var disposables = Set<AnyCancellable>()
     
     init(repositoriesFetcher: RepositoriesService, scheduler: DispatchQueue = DispatchQueue(label: "RepositoriesViewModel")) {
         self.repositoriesFetcher = repositoriesFetcher

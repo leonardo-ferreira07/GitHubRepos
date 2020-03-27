@@ -10,10 +10,10 @@ import Foundation
 import Combine
 
 class PullRequestViewModel: ViewModel {
-    @Published private(set) var dataSource: [PullRequestDetailViewModel] = []
-    let repository: String
     
-    private var disposables = Set<AnyCancellable>()
+    @Published private(set) var dataSource: [PullRequestDetailViewModel] = []
+    
+    let repository: String
     private let owner: String
     private let pullRequestsFetcher: PullRequestsService
     

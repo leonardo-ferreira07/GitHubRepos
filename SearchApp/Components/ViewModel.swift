@@ -9,7 +9,10 @@
 import Combine
 
 class ViewModel: ObservableObject {
+    
     @Published private(set) var isLoading: Bool = false
+    
+    var disposables = Set<AnyCancellable>()
     
     func startLoading() {
         isLoading = true
@@ -17,5 +20,9 @@ class ViewModel: ObservableObject {
     
     func stopLoading() {
         isLoading = false
+    }
+    
+    func onDisappear() {
+        _ = disposables.map({ $0.cancel() })
     }
 }
